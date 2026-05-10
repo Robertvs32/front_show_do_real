@@ -1,0 +1,24 @@
+.formLogin{
+    background-color: #1d8ecf00;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.formContainer{
+    width: 100%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 128, 0, 0);
+    align-items: center;
+}
+
+.logo{
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 500px;
+}

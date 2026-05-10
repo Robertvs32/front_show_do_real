@@ -1,0 +1,22 @@
+.inputLogin{
+    background-color: rgba(216, 30, 30, 0);
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 350px
+}
+
+.inputLogin input{
+    padding: 16px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.inputLogin label{
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+}
