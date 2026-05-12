@@ -1,0 +1,15 @@
+.btnLink{
+    background-color: var(--cor-principal);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+.btnLink img{
+    width: 20px;
+    margin-right: 6px;
+}

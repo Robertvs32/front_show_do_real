@@ -1,0 +1,11 @@
+.btnReturn{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.btnReturn img{
+    width: 100%;
+    height: 100%;
+}

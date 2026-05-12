@@ -1,0 +1,28 @@
+.dataContainer{
+    display: flex;
+    flex-direction: row;
+    flex: 1
+}
+
+.dataLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.logo{
+    width: 100px;   
+}
+
+.dia{
+    font-size: 14px
+}
+
+.separador{
+    margin: 0 6px
+}
+
+.diaSemana{
+    font-weight: bold;
+    font-size: 14px
+}

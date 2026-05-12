@@ -1,11 +1,13 @@
 import { createContext, useState  } from "react";
 import AuthServices from "../services/Auth.services";
+import type { JSX } from "react";
+import type { AuthContextType, ObjUser } from "@/features/auth/types/Auth.types";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext<null | AuthContextType>(null);
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({children}: {children: JSX.Element}) => {
 
-    const [objUser, setObjUser] = useState(null);
+    const [objUser, setObjUser] = useState<ObjUser | null>(null);
 
     const handleLogin = async (email: string, senha: string) => {
         try{

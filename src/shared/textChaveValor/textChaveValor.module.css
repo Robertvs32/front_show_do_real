@@ -1,0 +1,12 @@
+.textChaveValor{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2px;
+}
+
+.chave{
+    font-weight: bold;
+    margin-right: 12px
+}

@@ -6,8 +6,14 @@ import BtnLogin from "./components/btnLogin/BtnLogin";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import type { AuthContextType } from "../../types/Auth.types";
 
 export default function FormLogin(){
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const { handleLogin } = useContext(AuthContext) as AuthContextType
 
     const login = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -15,16 +21,11 @@ export default function FormLogin(){
         try{
             await handleLogin(email, senha)
         }catch(error: any){
-            handleLogin(email, senha)
+            alert("Erro");
         }
         
     }
 
-    const { handleLogin } = useContext(AuthContext)
-
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    
     return(
         <div className={styles.formLogin}>
             <img 
