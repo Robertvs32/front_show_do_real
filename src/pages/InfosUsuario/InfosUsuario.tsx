@@ -4,10 +4,16 @@ import LinhaSeparador from '@/shared/linhaSeparador/LinhaSeparador'
 import Title from '@/shared/title/Title'
 import TextChaveValor from '@/shared/textChaveValor/TextChaveValor'
 import BtnReturn from '@/shared/btnReturn/BtnReturn'
+import ModalConfirm from '@/shared/modalConfirm/ModalConfirm'
 
 export default function InfosUsuario(){
     return(
         <div className={styles.infosUsuario}>
+
+            <ModalConfirm
+                text="Ola, awdadadw"
+            />
+
             <DataLogo/>
 
             <BtnReturn

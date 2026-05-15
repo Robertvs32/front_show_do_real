@@ -22,28 +22,28 @@ export default function FormCadastroUser(){
 
         <InputForm
             campo="Email"
-            placeholder="Joao Silva"
+            placeholder="joaosilva@showdoreal.com"
             type="email"
             required={true}
-            value={dadosCadastro.Nome}
+            value={dadosCadastro.Email}
             onChange={alteraDadoCadastro}
         />
 
         <InputForm
             campo="Senha"
-            placeholder="Joao Silva"
-            type="text"
+            placeholder="*********"
+            type="password"
             required={true}
-            value={dadosCadastro.Nome}
+            value={dadosCadastro.Senha}
             onChange={alteraDadoCadastro}
         />
 
         <InputForm
-            campo="Confirmar senha"
-            placeholder="Joao Silva"
-            type="text"
+            campo="ConfirmaSenha"
+            placeholder="*********"
+            type="password"
             required={true}
-            value={dadosCadastro.Nome}
+            value={dadosCadastro.ConfirmaSenha}
             onChange={alteraDadoCadastro}
         />
 

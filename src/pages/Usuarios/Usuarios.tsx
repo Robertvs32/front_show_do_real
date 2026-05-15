@@ -13,7 +13,7 @@ export default function Usuarios(){
             <DataLogo/>
 
             <BtnReturn
-                path="home"
+                path="/home"
             />
 
             <div className={styles.titleCadastroContainer}>

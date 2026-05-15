@@ -9,5 +9,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src")
     }
+  },
+  server: {
+    allowedHosts: [
+      "antonina-supramolecular-dominga.ngrok-free.dev"
+    ]
   }
 })
