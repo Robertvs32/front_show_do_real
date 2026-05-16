@@ -1,10 +1,11 @@
 export interface AuthContextType{
     objUser: ObjUser | null
-    handleLogin: handleLogin
+    handleLogin: handleLogin,
+    loading: boolean
 }
 
 export interface ObjUser{
-    id: string,
+    id: number,
     nome: string,
     email: string
 }

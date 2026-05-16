@@ -1,12 +1,18 @@
 import Login from "@/pages/Login/Login"
-import Home from "@/pages/Home/Home";
+import { AuthContext } from "@/features/auth/contexts/AuthContext";
+import { useContext } from "react";
+import { Outlet } from "react-router";
 
 export default function App(){
 
-  const logado = true;
+  const { objUser, loading } = useContext(AuthContext)
 
-  if(!logado) return <Login/>
+  if(loading){
+    return <p>Carregandooooooo</p>
+  }
 
-  return <Home/>
+  if(!objUser) return <Login/>
+
+  return <Outlet/>
 
 }

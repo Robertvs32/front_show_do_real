@@ -23,15 +23,9 @@ export default function Leitor({setCodigo, setLeitorVisivel}: PropsLeitor){
     }
     
     useEffect(() => {
-
-        console.log("montou")
-
         let leitor;
-        let estaMontado = true;
     
         const iniciarLeitor = async () => { 
-
-            console.log("chamou a funcao")
 
             try{
                 const instanciaLeitor = new Zxing.BrowserMultiFormatReader();
@@ -57,9 +51,6 @@ export default function Leitor({setCodigo, setLeitorVisivel}: PropsLeitor){
                     }
                 )
 
-                if(!estaMontado){
-                    leitor.stop()
-                }
 
             }catch(error){
                 alert(error)
@@ -72,9 +63,6 @@ export default function Leitor({setCodigo, setLeitorVisivel}: PropsLeitor){
         }, 500)
         
         return () => {
-
-            console.log("Desmontou")
-
             clearTimeout(timer)
         }
 

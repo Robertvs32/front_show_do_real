@@ -26,6 +26,14 @@ const AuthServices = {
         }catch(error: any){
             throw error;
         }
+    },
+
+    logout: async () => {
+
+    },
+
+    verificaLogadoRefresh: async () => {
+        
     }
 
 }

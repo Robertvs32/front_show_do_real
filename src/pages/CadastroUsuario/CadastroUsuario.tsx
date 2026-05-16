@@ -1,4 +1,4 @@
-import types from '@/pages/CadastroUsuarios/cadastroUsuario.module.css'
+import types from '@/pages/CadastroUsuario/cadastroUsuario.module.css'
 import DataLogo from '@/shared/dataLogo/DataLogo'
 import Title from '@/shared/title/Title'
 import BtnReturn from '@/shared/btnReturn/BtnReturn'
