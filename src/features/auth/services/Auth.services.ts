@@ -1,24 +1,16 @@
-import api from "@/api/api";
+import { resumeFetch } from "@/api/api";
 
 const AuthServices = {
 
     login: async (email: string, senha: string) => {
         try{
-            const response = await fetch(api.url, {
-                method: 'POST',
-                credentials: "include",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email, 
-                    senha
-                })
-            }) 
+            const response = await resumeFetch('post', 'login', { email, senha });
 
             if(response.ok){
-                const body = response.json();
-                return body;
+                const dados = await response.json();
+                console.log("dados")
+                console.log(dados)
+                return dados;
             }
 
             throw new Error("Verifique email ou senha!");
@@ -29,11 +21,27 @@ const AuthServices = {
     },
 
     logout: async () => {
+        try{
+            await resumeFetch('get', 'logout');
 
+        }catch(error){
+            throw error
+        }
     },
 
     verificaLogadoRefresh: async () => {
-        
+        try{
+            const response = await resumeFetch('get', 'refresh');
+
+            if(response.ok){
+                const objUser = await response.json();
+                return objUser;
+            }
+
+            throw new Error("Erro ao verificar refreshToken");
+        }catch(error){
+            throw error
+        }
     }
 
 }

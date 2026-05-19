@@ -6,6 +6,7 @@ import Home from "@/pages/Home/Home";
 import Produtos from "@/pages/Produtos/Produtos";
 import App from "@/App";
 import { Navigate } from "react-router";
+import CadastroProduto from "@/pages/CadastroProduto/CadastroProduto";
 
 const router = createBrowserRouter([
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "/produtos",
                 element: <Produtos/>
+            },
+            {
+                path: "/cadastroprodutos",
+                element: <CadastroProduto/>
             }
         ]
     },

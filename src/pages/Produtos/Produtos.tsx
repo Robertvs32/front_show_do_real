@@ -7,15 +7,22 @@ import BtnLink from "@/shared/btnLink/BtnLink"
 import LinhaSeparador from "@/shared/linhaSeparador/LinhaSeparador"
 import InputCodigoBarra from "@/features/produtos/components/InputCodigoBarra/InputCodigoBarra"
 import InputNome from "@/features/produtos/components/InputNome/InputNome"
-import CardPrevProduto from "@/features/produtos/cardPrevProduto/CardPrevProduto"
+import CardPrevProduto from "@/features/produtos/components/cardPrevProduto/CardPrevProduto"
 import Paginacao from "@/shared/paginacao/Paginacao"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Leitor from "@/features/leitor/components/Leitor/Leitor"
+import ListaProdutos from "@/features/produtos/components/listaProdutos/ListaProdutos"
+import useBuscaProdutos from "@/features/produtos/hooks/useBuscaProdutos"
 
 export default function Produtos(){
 
     const [leitorVisible, setLeitorVisible] = useState<boolean>(false);
-    const [codigo, setCodigo] = useState<string>("");
+
+    const { codigo, nome, setCodigo, setNome, buscaProdutos, produtos } = useBuscaProdutos();
+
+    useEffect(() => {
+        buscaProdutos();
+    }, [])
 
     return(
         <div className={styles.produtos}>
@@ -40,7 +47,7 @@ export default function Produtos(){
                 />
                 
                 <BtnLink
-                    path="aaa"
+                    path="/cadastroprodutos"
                     text="Cadastrar produto"
                     icon={IconNovoUser}
                 />
@@ -54,10 +61,14 @@ export default function Produtos(){
                 setLeitorVisible={setLeitorVisible}
             />
             
-            <InputNome/>
+            <InputNome
+                setter={setNome}
+                getter={nome}
+            />
 
             <button 
                 className={styles.btnBuscar}
+                onClick={buscaProdutos}
             >
                 Buscar produto
             </button>
@@ -66,86 +77,10 @@ export default function Produtos(){
 
             <p className={styles.textResultado}>Resultados</p>
 
-            <Paginacao/>
+            {/* <Paginacao/> */}
 
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
-            />
-
-            <CardPrevProduto
-                nome="Garrafa termica"
-                codigo="789123123124"
+            <ListaProdutos
+                produtos={produtos}
             />
         </div>
     )

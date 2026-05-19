@@ -12,7 +12,6 @@ export default function Leitor({setCodigo, setLeitorVisivel}: PropsLeitor){
 
     //CRIA REFERENCIA
     const videoRef = useRef<HTMLVideoElement>(null);
-    // const leitorRef = useRef<Zxing.IScannerControls | null>(null)
 
     const constraints: MediaStreamConstraints = {
         video: {

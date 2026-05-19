@@ -21,24 +21,34 @@ export const AuthProvider = ({children}: {children: JSX.Element}) => {
         }
     }
 
+    const handleLogout = async () => {
+        try{
+            await AuthServices.logout(); //LIMPA TOKEN E REFRESH DOS COOKIES
+            setObjUser(null);
+        }catch(error){
+            console.log(error);
+        }
+    }
+
     const verificaLogado = async () => {
         try{
-            //CHAMA A FUNCAO QUE VERIFICA O REFRESH, ENVIA O TOKEN NO COOKIE E RETORNA OS DADOS DO USUARIO { ID, NOME, ROLE }
-            //GUARDA OS DADOS NO OBJUSER
+            const objUser = await AuthServices.verificaLogadoRefresh()
+            setObjUser(objUser)
+            console.log(objUser)
         }catch(error){
-            alert(error);
+            console.log(error);
         }finally{
             setLoading(false)
         }
     }
 
     useEffect(() => {
-        verificaLogado()
+        verificaLogado();       
     }, [])
 
     return(
         <AuthContext.Provider 
-            value={{objUser, handleLogin, loading}}
+            value={{objUser, handleLogin, loading, handleLogout}}
         >
             {children}
         </AuthContext.Provider>

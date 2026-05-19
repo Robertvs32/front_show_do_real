@@ -1,16 +1,18 @@
 export interface AuthContextType{
     objUser: ObjUser | null
     handleLogin: handleLogin,
+    handleLogout: handleLogout
     loading: boolean
 }
 
 export interface ObjUser{
     id: number,
     nome: string,
-    email: string
+    role: string
 }
 
 export type handleLogin = (email: string, senha: string) => Promise<void>
+export type handleLogout = () => Promise<void>;
 
 
 //INTERFACES CADASTRO
@@ -21,11 +23,3 @@ export interface DadosCadastro{
     ConfirmaSenha: string
 }
 
-export interface InputForm{
-    campo: string, 
-    placeholder: string, 
-    type: string, 
-    required: boolean,
-    value: string,
-    onChange: (valor: string, campo: string) => void
-}

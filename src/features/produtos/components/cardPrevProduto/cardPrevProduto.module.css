@@ -15,4 +15,12 @@
 
 .codigoCardPrev{
     font-size: 12px;
+    margin-top: 4px;
+}
+
+.valorCardPrev{
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+
 }

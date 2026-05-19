@@ -1,5 +1,5 @@
 import useCadastro from '@/features/auth/hooks/useCadastro'
-import InputForm from '@/features/auth/components/formCadastroUser/components/InputForm/InputForm'
+import InputForm from '@/shared/InputForm/InputForm'
 import styles from '@/features/auth/components/formCadastroUser/formCadastroUser.module.css'
 
 export default function FormCadastroUser(){
